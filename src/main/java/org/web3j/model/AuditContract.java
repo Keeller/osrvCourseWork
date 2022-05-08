@@ -1,8 +1,5 @@
 package org.web3j.model;
 
-import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.Collections;
 import org.web3j.abi.TypeReference;
 import org.web3j.abi.datatypes.Function;
 import org.web3j.abi.datatypes.Type;
@@ -17,11 +14,15 @@ import org.web3j.tx.Contract;
 import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
 
+import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.Collections;
+
 /**
  * <p>Auto generated code.
  * <p><strong>Do not modify!</strong>
  * <p>Please use the <a href="https://docs.web3j.io/command_line.html">web3j command line tools</a>,
- * or the org.web3j.codegen.SolidityFunctionWrapperGenerator in the 
+ * or the org.web3j.codegen.SolidityFunctionWrapperGenerator in the
  * <a href="https://github.com/web3j/web3j/tree/master/codegen">codegen module</a> to update.
  *
  * <p>Generated with web3j version 4.8.7.
@@ -58,43 +59,6 @@ public class AuditContract extends Contract {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
     }
 
-    public RemoteFunctionCall<String> get(String key) {
-        final Function function = new Function(FUNC_GET, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(key)), 
-                Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {}));
-        return executeRemoteCallSingleValueReturn(function, String.class);
-    }
-
-    public RemoteFunctionCall<String> hashInfo(String param0) {
-        final Function function = new Function(FUNC_HASHINFO, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(param0)), 
-                Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {}));
-        return executeRemoteCallSingleValueReturn(function, String.class);
-    }
-
-    public RemoteFunctionCall<BigInteger> keyLength() {
-        final Function function = new Function(FUNC_KEYLENGTH, 
-                Arrays.<Type>asList(), 
-                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
-        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
-    }
-
-    public RemoteFunctionCall<String> keys(BigInteger param0) {
-        final Function function = new Function(FUNC_KEYS, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(param0)), 
-                Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {}));
-        return executeRemoteCallSingleValueReturn(function, String.class);
-    }
-
-    public RemoteFunctionCall<TransactionReceipt> put(String key, String value) {
-        final Function function = new Function(
-                FUNC_PUT, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(key), 
-                new org.web3j.abi.datatypes.Utf8String(value)), 
-                Collections.<TypeReference<?>>emptyList());
-        return executeRemoteCallTransaction(function);
-    }
-
     @Deprecated
     public static AuditContract load(String contractAddress, Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit) {
         return new AuditContract(contractAddress, web3j, credentials, gasPrice, gasLimit);
@@ -129,5 +93,46 @@ public class AuditContract extends Contract {
     @Deprecated
     public static RemoteCall<AuditContract> deploy(Web3j web3j, TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit) {
         return deployRemoteCall(AuditContract.class, web3j, transactionManager, gasPrice, gasLimit, BINARY, "");
+    }
+
+    public RemoteFunctionCall<String> get(String key) {
+        final Function function = new Function(FUNC_GET,
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(key)),
+                Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {
+                }));
+        return executeRemoteCallSingleValueReturn(function, String.class);
+    }
+
+    public RemoteFunctionCall<String> hashInfo(String param0) {
+        final Function function = new Function(FUNC_HASHINFO,
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(param0)),
+                Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {
+                }));
+        return executeRemoteCallSingleValueReturn(function, String.class);
+    }
+
+    public RemoteFunctionCall<BigInteger> keyLength() {
+        final Function function = new Function(FUNC_KEYLENGTH,
+                Arrays.<Type>asList(),
+                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {
+                }));
+        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
+    }
+
+    public RemoteFunctionCall<String> keys(BigInteger param0) {
+        final Function function = new Function(FUNC_KEYS,
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.generated.Uint256(param0)),
+                Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {
+                }));
+        return executeRemoteCallSingleValueReturn(function, String.class);
+    }
+
+    public RemoteFunctionCall<TransactionReceipt> put(String key, String value) {
+        final Function function = new Function(
+                FUNC_PUT,
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(key),
+                        new org.web3j.abi.datatypes.Utf8String(value)),
+                Collections.<TypeReference<?>>emptyList());
+        return executeRemoteCallTransaction(function);
     }
 }

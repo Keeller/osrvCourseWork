@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ExceptionHandlerAdvice {
 
     @ExceptionHandler(Throwable.class)
-    public ResponseEntity<ExceptionResponseDto> processException(Throwable th){
+    public ResponseEntity<ExceptionResponseDto> processException(Throwable th) {
         return ResponseEntity.status(500)
                 .body(ExceptionResponseDto.builder()
                         .msg(th.getMessage())

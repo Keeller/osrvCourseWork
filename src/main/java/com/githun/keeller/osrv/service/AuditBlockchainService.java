@@ -27,17 +27,17 @@ public class AuditBlockchainService {
 
     public void audit(AuditDto auditDto) throws Exception {
         AuditContract contract = AuditContract.load(contractAddress, web3j, credentials, new DefaultGasProvider());
-        contract.put(auditDto.getHash(),auditDto.getInfo()).send();
+        contract.put(auditDto.getHash(), auditDto.getInfo()).send();
     }
 
-    public Map<String,String> getDashboardInfo() throws Exception {
+    public Map<String, String> getDashboardInfo() throws Exception {
         AuditContract contract = AuditContract.load(contractAddress, web3j, credentials, new DefaultGasProvider());
-        Map<String,String> result=new HashMap<>();
+        Map<String, String> result = new HashMap<>();
         BigInteger keysLength = contract.keyLength().send();
-        for(BigInteger i=BigInteger.ZERO;i.compareTo(keysLength)<0;i=i.add(BigInteger.ONE)){
+        for (BigInteger i = BigInteger.ZERO; i.compareTo(keysLength) < 0; i = i.add(BigInteger.ONE)) {
             String key = contract.keys(i).send();
             String value = contract.get(key).send();
-            result.put(key,value);
+            result.put(key, value);
         }
         return result;
     }

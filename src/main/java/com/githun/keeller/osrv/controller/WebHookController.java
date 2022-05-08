@@ -18,14 +18,14 @@ public class WebHookController {
     @SneakyThrows
     @PostMapping("/process-sensor-data")
     @ResponseBody
-    public CheckContractResponseDto processCheckContractHook(@RequestBody SensorDataDto sensorDataDto){
+    public CheckContractResponseDto processCheckContractHook(@RequestBody SensorDataDto sensorDataDto) {
         return useCaseService.processCheckContractHook(sensorDataDto);
     }
 
     @SneakyThrows
     @PostMapping("/process-change-owner/{owner}")
     @ResponseBody
-    public ChangeOwnerResponseDto processChangeOwnerHook(@PathVariable("owner") String owner){
+    public ChangeOwnerResponseDto processChangeOwnerHook(@PathVariable("owner") String owner) {
         return useCaseService.processChangeOwnerHook(owner);
     }
 }

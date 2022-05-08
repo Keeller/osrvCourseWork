@@ -18,7 +18,7 @@ public class DashboardController {
 
     @GetMapping("/info")
     @SneakyThrows
-    public Map<String,String> getDashboardInfo(){
+    public Map<String, String> getDashboardInfo() {
         return auditBlockchainService.getDashboardInfo();
     }
 

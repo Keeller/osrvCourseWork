@@ -15,13 +15,13 @@ public class AdminController {
 
     @SneakyThrows
     @GetMapping("/deploy/picture-contract")
-    public String deployPictureContract(){
+    public String deployPictureContract() {
         return adminService.deployPictureContract();
     }
 
     @SneakyThrows
     @GetMapping("/deploy/audit-contract")
-    public String deployAuditContract(){
+    public String deployAuditContract() {
         return adminService.deployAuditContract();
     }
 }

@@ -1,8 +1,5 @@
 package org.web3j.model;
 
-import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.Collections;
 import org.web3j.abi.TypeReference;
 import org.web3j.abi.datatypes.Bool;
 import org.web3j.abi.datatypes.Function;
@@ -18,11 +15,15 @@ import org.web3j.tx.Contract;
 import org.web3j.tx.TransactionManager;
 import org.web3j.tx.gas.ContractGasProvider;
 
+import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.Collections;
+
 /**
  * <p>Auto generated code.
  * <p><strong>Do not modify!</strong>
  * <p>Please use the <a href="https://docs.web3j.io/command_line.html">web3j command line tools</a>,
- * or the org.web3j.codegen.SolidityFunctionWrapperGenerator in the 
+ * or the org.web3j.codegen.SolidityFunctionWrapperGenerator in the
  * <a href="https://github.com/web3j/web3j/tree/master/codegen">codegen module</a> to update.
  *
  * <p>Generated with web3j version 4.8.7.
@@ -61,52 +62,6 @@ public class PictureTransfer extends Contract {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
     }
 
-    public RemoteFunctionCall<TransactionReceipt> CheckIsFailed() {
-        final Function function = new Function(
-                FUNC_CHECKISFAILED, 
-                Arrays.<Type>asList(), 
-                Collections.<TypeReference<?>>emptyList());
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteFunctionCall<Boolean> isFailed() {
-        final Function function = new Function(FUNC_ISFAILED, 
-                Arrays.<Type>asList(), 
-                Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {}));
-        return executeRemoteCallSingleValueReturn(function, Boolean.class);
-    }
-
-    public RemoteFunctionCall<String> owner() {
-        final Function function = new Function(FUNC_OWNER, 
-                Arrays.<Type>asList(), 
-                Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {}));
-        return executeRemoteCallSingleValueReturn(function, String.class);
-    }
-
-    public RemoteFunctionCall<TransactionReceipt> put(String key, BigInteger value) {
-        final Function function = new Function(
-                FUNC_PUT, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(key), 
-                new org.web3j.abi.datatypes.generated.Int64(value)), 
-                Collections.<TypeReference<?>>emptyList());
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteFunctionCall<BigInteger> sensors(String param0) {
-        final Function function = new Function(FUNC_SENSORS, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(param0)), 
-                Arrays.<TypeReference<?>>asList(new TypeReference<Int64>() {}));
-        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
-    }
-
-    public RemoteFunctionCall<TransactionReceipt> setOwner(String newOwner) {
-        final Function function = new Function(
-                FUNC_SETOWNER, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(newOwner)), 
-                Collections.<TypeReference<?>>emptyList());
-        return executeRemoteCallTransaction(function);
-    }
-
     @Deprecated
     public static PictureTransfer load(String contractAddress, Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit) {
         return new PictureTransfer(contractAddress, web3j, credentials, gasPrice, gasLimit);
@@ -141,5 +96,54 @@ public class PictureTransfer extends Contract {
     @Deprecated
     public static RemoteCall<PictureTransfer> deploy(Web3j web3j, TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit) {
         return deployRemoteCall(PictureTransfer.class, web3j, transactionManager, gasPrice, gasLimit, BINARY, "");
+    }
+
+    public RemoteFunctionCall<TransactionReceipt> CheckIsFailed() {
+        final Function function = new Function(
+                FUNC_CHECKISFAILED,
+                Arrays.<Type>asList(),
+                Collections.<TypeReference<?>>emptyList());
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteFunctionCall<Boolean> isFailed() {
+        final Function function = new Function(FUNC_ISFAILED,
+                Arrays.<Type>asList(),
+                Arrays.<TypeReference<?>>asList(new TypeReference<Bool>() {
+                }));
+        return executeRemoteCallSingleValueReturn(function, Boolean.class);
+    }
+
+    public RemoteFunctionCall<String> owner() {
+        final Function function = new Function(FUNC_OWNER,
+                Arrays.<Type>asList(),
+                Arrays.<TypeReference<?>>asList(new TypeReference<Utf8String>() {
+                }));
+        return executeRemoteCallSingleValueReturn(function, String.class);
+    }
+
+    public RemoteFunctionCall<TransactionReceipt> put(String key, BigInteger value) {
+        final Function function = new Function(
+                FUNC_PUT,
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(key),
+                        new org.web3j.abi.datatypes.generated.Int64(value)),
+                Collections.<TypeReference<?>>emptyList());
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteFunctionCall<BigInteger> sensors(String param0) {
+        final Function function = new Function(FUNC_SENSORS,
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(param0)),
+                Arrays.<TypeReference<?>>asList(new TypeReference<Int64>() {
+                }));
+        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
+    }
+
+    public RemoteFunctionCall<TransactionReceipt> setOwner(String newOwner) {
+        final Function function = new Function(
+                FUNC_SETOWNER,
+                Arrays.<Type>asList(new org.web3j.abi.datatypes.Utf8String(newOwner)),
+                Collections.<TypeReference<?>>emptyList());
+        return executeRemoteCallTransaction(function);
     }
 }

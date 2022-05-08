@@ -8,9 +8,6 @@ import org.web3j.model.AuditContract;
 import org.web3j.model.PictureTransfer;
 import org.web3j.protocol.Web3j;
 import org.web3j.tx.gas.DefaultGasProvider;
-import org.web3j.tx.gas.StaticGasProvider;
-
-import java.math.BigInteger;
 
 @Service
 @RequiredArgsConstructor

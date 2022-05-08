@@ -29,7 +29,7 @@ public class CheckContractConditionsService {
     private String contractAddress;
 
     public CheckContractResponseDto execCheck(SensorDataDto sensorDataDto) throws Exception {
-        OffsetDateTime receiveDate=OffsetDateTime.now();
+        OffsetDateTime receiveDate = OffsetDateTime.now();
         PictureTransfer contract = PictureTransfer.load(contractAddress, web3j, credentials, new DefaultGasProvider());
         TransactionReceipt temperatureValue1 = contract.put("temperatureValue1", sensorDataDto.getTemperatureValue1())
                 .send();
@@ -55,10 +55,10 @@ public class CheckContractConditionsService {
     }
 
     public ChangeOwnerResponseDto changeOwner(String newOwner) throws Exception {
-        OffsetDateTime receiveDate=OffsetDateTime.now();
+        OffsetDateTime receiveDate = OffsetDateTime.now();
         PictureTransfer contract = PictureTransfer.load(contractAddress, web3j, credentials, new DefaultGasProvider());
-        var isFailed=contract.isFailed().send();
-        if(isFailed){
+        var isFailed = contract.isFailed().send();
+        if (isFailed) {
             return ChangeOwnerResponseDto.builder()
                     .isChanged(false)
                     .offsetDateTime(receiveDate)

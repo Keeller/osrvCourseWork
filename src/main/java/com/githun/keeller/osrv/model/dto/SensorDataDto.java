@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigInteger;
-import java.time.OffsetDateTime;
 
 @Data
 @AllArgsConstructor
@@ -15,5 +14,5 @@ public class SensorDataDto {
     private BigInteger temperatureValue2;
     private BigInteger humidityValue1;
     private BigInteger humidityValue2;
-    private OffsetDateTime dateTime;
+    private String dateTime;
 }

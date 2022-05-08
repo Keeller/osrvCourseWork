@@ -19,11 +19,11 @@ public class UseCaseService {
 
     public CheckContractResponseDto processCheckContractHook(SensorDataDto sensorDataDto) throws Exception {
         var checkContractResponseDto = checkContractConditionsService.execCheck(sensorDataDto);
-        Map<String,String> info=new HashMap<>();
-        ObjectMapper objectMapper=new ObjectMapper();
-        info.put("sensor info dto",objectMapper.writeValueAsString(sensorDataDto));
-        info.put("failed status",String.valueOf(checkContractResponseDto.getIsFailed()));
-        var auditDto= AuditDto.builder()
+        Map<String, String> info = new HashMap<>();
+        ObjectMapper objectMapper = new ObjectMapper();
+        info.put("sensor info dto", objectMapper.writeValueAsString(sensorDataDto));
+        info.put("failed status", String.valueOf(checkContractResponseDto.getIsFailed()));
+        var auditDto = AuditDto.builder()
                 .hash(checkContractResponseDto.getHash())
                 .info(objectMapper.writeValueAsString(info))
                 .build();
@@ -33,7 +33,7 @@ public class UseCaseService {
 
     public ChangeOwnerResponseDto processChangeOwnerHook(String owner) throws Exception {
         var changeOwnerResponseDto = checkContractConditionsService.changeOwner(owner);
-        var auditDto=AuditDto.builder()
+        var auditDto = AuditDto.builder()
                 .hash(changeOwnerResponseDto.getChangeHash())
                 .info(changeOwnerResponseDto.getNewOwner())
                 .build();
