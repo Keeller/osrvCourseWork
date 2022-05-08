@@ -1,0 +1,15 @@
+server:
+  port: 8081
+private-block-chain:
+  url: "http://localhost:8546/"
+  path: "./blockchain/private/"
+  password: "1234567890"
+  contract-address: "0x4122a17301c8fc1f88a8188ca7aa0882aec1d9d4"
+  credstring: "{\"address\":\"d748bc6918640c5d57cb67be0162f4cd56cc647d\",\"crypto\":{\"cipher\":\"aes-128-ctr\",\"ciphertext\":\"b3982555fd7d058e68afb5d0d4eeac3a265552010b5aae8d744f0989e98e21fb\",\"cipherparams\":{\"iv\":\"8390c08a441c7c445f6d40467c92ada2\"},\"kdf\":\"scrypt\",\"kdfparams\":{\"dklen\":32,\"n\":262144,\"p\":1,\"r\":8,\"salt\":\"1bc01cb6e2d967c80438ada5b17083d51375c72670aaedf70a13a384fc20fad8\"},\"mac\":\"65e5d7c8a707ea3d976afd83f18954e5b1f3d26685f873e6128f9e8e868233de\"},\"id\":\"fa2d379a-460c-4c5f-ba0b-d1eb6cb0ee73\",\"version\":3}"
+
+public-block-chain:
+  url: "http://localhost:8545/"
+  path: "./blockchain/public/"
+  password: "1234567890"
+  contract-address: "0x011871fdd21f1447fa510521b818f4efc245a5d1"
+  credstring: "{\"address\":\"d781ba8e832f5143e1fe2d005797174f47aa318b\",\"crypto\":{\"cipher\":\"aes-128-ctr\",\"ciphertext\":\"3b8203ea865f150992a84610c2ce0601210b5db4b8884ebea11e2e7f97db740a\",\"cipherparams\":{\"iv\":\"f2e9fa810e1d395456408d80f0ed6652\"},\"kdf\":\"scrypt\",\"kdfparams\":{\"dklen\":32,\"n\":262144,\"p\":1,\"r\":8,\"salt\":\"5b0fd6ee1e709f3b4494c47e766069e37775873d3dc14ad2d26bdbe606476760\"},\"mac\":\"20ca8718ed3c7e8cae228afc8a7c2d2c21fd616a233c39670ccc8ae3fef0b4b3\"},\"id\":\"53a3e179-3a15-46a7-a46b-6d7f8777d3b9\",\"version\":3}"
